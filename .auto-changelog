@@ -1,0 +1,18 @@
+{
+  "package": "./package.json",
+  "output": "CHANGELOG.md",
+  "template": "./custom-template.hbs",
+  "unreleased": true,
+  "commitLimit": false,
+  "backfillLimit": false,
+  "unreleasedOnly": false,
+  "hideEmptyReleases": false,
+  "hideCredit": false,
+  "issueUrl": "https://fabricainfo.atlassian.net/browse/{id}",
+  "commitUrl": "https://bitbucket.org/fabricainfo1/e-identidade-front/commits/{id}",
+  "mergeUrl": "https://bitbucket.org/fabricainfo1/e-identidade-front/pull-requests/{id}",
+  "compareUrl": "https://bitbucket.org/fabricainfo1/e-identidade-front/src/{to}",
+  "replaceText": {
+    "((EID|EIDENTIDAD)-\\d+)": "[`$1`](https://fabricainfo.atlassian.net/browse/$1)"
+  }
+}

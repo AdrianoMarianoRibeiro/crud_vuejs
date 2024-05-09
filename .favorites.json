@@ -1,0 +1,19 @@
+[
+    {
+        "type": "Group",
+        "name": "crud_vuejs",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "kIJRiq3EZgwGxmOp"
+    },
+    {
+        "type": "File",
+        "name": "c:\\laragon\\www\\e-identidade-front\\src\\components\\signer\\shared\\helpers\\findByEmailOrNiToSubscriberForm.ts",
+        "parent_id": "kIJRiq3EZgwGxmOp",
+        "fsPath": "c:\\laragon\\www\\e-identidade-front\\src\\components\\signer\\shared\\helpers\\findByEmailOrNiToSubscriberForm.ts",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "uvpTGyh1KQC9fRYz"
+    }
+]

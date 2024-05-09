@@ -1,0 +1,91 @@
+# Changelog
+
+{{#unless options.hideCredit}}
+  Changelog gerado por [`auto-changelog`](https://github.com/CookPete/auto-changelog).
+  Estas notas de versões adotam as convenções [`keepachangelog`](https://keepachangelog.com/en/1.0.0/) e [`conventionalcommits`](https://www.conventionalcommits.org/en/v1.0.0/)
+{{/unless}}
+
+{{#each releases}}
+  {{#if tag}}
+    {{#unless href}}
+      ## {{#if tag}} - {{isoDate}}{{/if}}
+    {{else}}
+      ## [{{title}}]({{href}}){{#if tag}} - {{isoDate}}{{/if}}
+    {{/unless}}
+  {{/if}}
+
+  {{#unless tag}}
+    ## Unreleased
+  {{/unless}}
+
+  {{#if summary}}
+    {{summary}}
+  {{/if}}
+
+  {{#commit-list
+    commits
+    heading='### ⚠️ BREAKING CHANGES'
+    message='BREAKING CHANGE'
+  }}
+    - {{subject}}
+    [{{shorthash}}]({{href}})
+  {{/commit-list}}
+
+  {{#if merges}}
+    ### Merged pull request
+    {{#each
+      merges
+    }}
+      - {{message}} [`#{{id}}`]({{href}})
+    {{/each}}
+  {{/if}}
+
+  {{#commit-list
+    commits
+    heading='### Added'
+    message='\bfeat(?:\([A-Za-z0-9_-]+(?:-\d+)?\))?:\s*.*$'
+    exclude='BREAKING CHANGE'
+  }}
+    - {{subject}}
+    [{{shorthash}}]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list
+    commits
+    heading='### Fixed'
+    message='\bfix(?:\([A-Za-z0-9_-]+(?:-\d+)?\))?:\s*.*$'
+    exclude='BREAKING CHANGE'
+  }}
+    - {{subject}}
+    [{{shorthash}}]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list
+    commits
+    heading='### Refactor'
+    message='refactor'
+    exclude='BREAKING CHANGE'
+  }}
+    - {{subject}}
+    [{{shorthash}}]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list
+    commits
+    heading='### Performance'
+    message='\bperf(?:\([A-Za-z0-9_-]+(?:-\d+)?\))?:\s*.*$'
+    exclude='BREAKING CHANGE'
+  }}
+    - {{subject}}
+    [{{shorthash}}]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list
+    commits heading='### CI/CD'
+    message='\bci(?:\([A-Za-z0-9_-]+(?:-\d+)?\))?:\s*.*$'
+    exclude='BREAKING CHANGE'
+  }}
+    - {{subject}}
+    [{{shorthash}}]({{href}})
+  {{/commit-list}}
+{{/each}}
